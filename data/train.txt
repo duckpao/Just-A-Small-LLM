@@ -1,0 +1,38 @@
+[2024-01-01 09:00:01] INFO service=auth message=starting authentication service
+[2024-01-01 09:00:02] INFO service=auth message=loading configuration file
+[2024-01-01 09:00:03] INFO service=auth message=configuration loaded successfully
+[2024-01-01 09:00:04] INFO service=database message=connecting to database host=db01
+[2024-01-01 09:00:05] INFO service=database message=connection established
+[2024-01-01 09:00:06] INFO service=auth message=initializing token manager
+[2024-01-01 09:00:07] INFO service=auth message=token manager ready
+[2024-01-01 09:01:10] WARN service=auth message=login attempt failed user=john.doe reason=invalid_password
+[2024-01-01 09:01:12] WARN service=auth message=login attempt failed user=john.doe reason=invalid_password
+[2024-01-01 09:01:15] INFO service=auth message=login successful user=jane.smith
+[2024-01-01 09:02:00] INFO service=api message=received request endpoint=/api/v1/orders method=POST
+[2024-01-01 09:02:01] INFO service=api message=validating request payload
+[2024-01-01 09:02:02] ERROR service=api message=validation failed field=price error=missing_field
+[2024-01-01 09:02:03] INFO service=api message=returning error response status=400
+[2024-01-01 09:03:10] INFO service=api message=received request endpoint=/api/v1/orders method=POST
+[2024-01-01 09:03:11] INFO service=api message=validating request payload
+[2024-01-01 09:03:12] INFO service=database message=inserting order record
+[2024-01-01 09:03:13] INFO service=database message=order inserted successfully order_id=78421
+[2024-01-01 09:03:14] INFO service=api message=returning success response status=201
+[2024-01-01 09:05:00] INFO service=worker message=starting background job name=email_sender
+[2024-01-01 09:05:01] INFO service=worker message=processing job job_id=5521
+[2024-01-01 09:05:02] ERROR service=worker message=failed to send email error=smtp_timeout
+[2024-01-01 09:05:03] WARN service=worker message=retrying job job_id=5521 attempt=1
+[2024-01-01 09:05:04] ERROR service=worker message=failed to send email error=smtp_timeout
+[2024-01-01 09:05:05] WARN service=worker message=retrying job job_id=5521 attempt=2
+[2024-01-01 09:05:06] INFO service=worker message=job failed permanently job_id=5521
+[2024-01-01 09:10:00] INFO service=monitor message=system health check started
+[2024-01-01 09:10:01] INFO service=monitor message=cpu_usage=32 percent
+[2024-01-01 09:10:02] INFO service=monitor message=memory_usage=58 percent
+[2024-01-01 09:10:03] INFO service=monitor message=disk_usage=71 percent
+[2024-01-01 09:10:04] WARN service=monitor message=disk usage high threshold=70 percent
+[2024-01-01 09:10:05] INFO service=monitor message=health check completed
+[2024-01-01 09:15:00] ERROR service=database message=connection lost host=db01
+[2024-01-01 09:15:01] INFO service=database message=attempting reconnection
+[2024-01-01 09:15:02] INFO service=database message=reconnection successful
+[2024-01-01 09:20:00] INFO service=shutdown message=received shutdown signal
+[2024-01-01 09:20:01] INFO service=shutdown message=stopping services gracefully
+[2024-01-01 09:20:02] INFO service=shutdown message=shutdown completed
